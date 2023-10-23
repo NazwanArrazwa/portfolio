@@ -1,0 +1,798 @@
+/*
+
+Tooplate 2115 Marvel
+
+https://www.tooplate.com/view/2115-marvel
+
+*/
+
+
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,700");
+
+*{
+  font-family: "Maven Pro", sans-serif;
+  transition: background 0.4s ease;
+}
+
+body {
+  padding-top: 70px;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* Ganti dengan warna latar belakang yang sesuai */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+#status {
+  text-align: center;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  color: #ffc200; /* Ganti dengan warna yang Anda inginkan */
+}
+
+.preloader-hide {
+  display: none;
+}
+
+.full-screen {
+  padding: 7.2rem 0;
+}
+
+.small-text {
+  color: #5b5b5b;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 50px;
+  letter-spacing: 0.2px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  list-style: none;
+}
+
+a {
+  font-weight: normal;
+  text-decoration: none !important;
+  transition: all 0.4s ease;
+}
+a:hover {
+  color: #ffc200 !important;
+}
+
+.navbar-brand .uil {
+  font-size: 40px;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #5b5b5b;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+h1 {
+  color: #212121;
+  font-size: 2.8em;
+  margin: 24px 0;
+}
+
+h2 {
+  color: #353535;
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+h3 {
+  color: #484848;
+}
+
+h3,
+b, strong {
+  font-weight: bold;
+}
+
+.custom-btn {
+  background: #eee;
+  color: #5b5b5b;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 13px 29px;
+  font-size: 14px;
+  line-height: normal;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.custom-btn:hover {
+  color: #ffc200;
+}
+.custom-btn.custom-btn-bg {
+  background: #474559;
+  color: #ffffff;
+}
+.custom-btn.custom-btn-bg:hover {
+  background: #ffc200;
+  color: #ffffff !important;
+}
+
+.animated {
+  position: relative;
+}
+
+.animated-info {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 5px;
+  min-width: 350px;
+  position: relative;
+}
+
+.animated-item {
+  color: #ffc200;
+}
+
+.animated-item {
+  font-size: 38px;
+  line-height: inherit;
+  display: block;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  animation: BottomTotop 6s linear infinite 0s;
+}
+.animated-item:nth-child(2n+2) {
+  animation-delay: 2s;
+}
+.animated-item:nth-child(3n+3) {
+  animation-delay: 4s;
+}
+
+@keyframes BottomTotop {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  25% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  30% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 15;
+  will-change: transform;
+  transition: transform 200ms linear;
+}
+.navbar[class*="-unpinned"] {
+  transform: translate(0, -150%);
+}
+.navbar[class*="-pinned"] {
+  transform: translate(0, 0);
+}
+.navbar[class*="headroom--not-top"] {
+  background: #ffffff;
+  border-bottom: 1px solid #f0f0f0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+.navbar-expand-sm .navbar-nav .nav-link {
+  padding: 0 20px;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: 16px;
+  overflow: hidden;
+}
+.nav-link span {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+.nav-link span:before {
+  position: absolute;
+  top: 100%;
+  content: attr(data-hover);
+  transform: translate3d(0, 0, 0);
+}
+
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ffc200;
+  font-weight: bold;
+}
+.navbar-light .navbar-nav .nav-link:focus span,
+.navbar-light .navbar-nav .nav-link:hover span {
+  transform: translateY(-100%);
+}
+
+.navbar-light .navbar-toggler-icon {
+  background: none;
+}
+
+.navbar-toggler {
+  border: 0;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  outline: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.navbar-toggler:focus {
+  outline: none;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:first-child {
+  transform: rotate(45deg);
+  top: 6px;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:nth-child(2) {
+  display: none;
+}
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:last-child {
+  transform: rotate(-45deg);
+  bottom: 3px;
+}
+.navbar-toggler .navbar-toggler-icon {
+  background: #212121;
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin: 5px 0;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.dark-mode .navbar-toggler .navbar-toggler-icon {
+  background: #ffffff;
+}
+
+.copyright-text {
+  font-size: 16px;
+  font-weight: normal;
+  display: block;
+}
+
+.color-mode {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.color-mode-icon {
+  position: relative;
+  right: 6px;
+}
+.color-mode-icon:after {
+  font-family: 'unicons';
+  content: '\ea9f';
+  font-size: 30px;
+  font-weight: 300;
+  font-style: normal;
+}
+.color-mode-icon.active:after {
+  font-family: 'unicons';
+  content: '\eb65';
+  font-size: 30px;
+  color: #ffffff;
+}
+
+
+.dark-mode {
+  background: #0c0c0d;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .navbar-light .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark-mode .navbar-light .navbar-nav .nav-link:hover {
+  color: #ffc200;
+}
+.dark-mode .navbar[class*="headroom--not-top"] {
+  background: #0c0c0d;
+  border-bottom: 1px solid #1f1f1f;
+}
+.dark-mode .small-text {
+  color: #ffffff;
+}
+.dark-mode .feature-card .uil,
+.dark-mode .navbar-light .navbar-brand,
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6,
+.dark-mode .color-mode {
+  color: #ffffff;
+}
+.dark-mode .owl-carousel .owl-nav button.owl-next,
+.dark-mode .owl-carousel .owl-nav button.owl-prev,
+.dark-mode .owl-carousel button.owl-dot {
+  color: #ffffff;
+}
+
+/* Gaya CSS untuk tech stack saat mode gelap */
+.dark-mode .tech-stack {
+  background: #000000; /* Warna latar belakang saat mode gelap */
+}
+
+.dark-mode .tech-stack h2 {
+  color: #ffffff; /* Warna teks saat mode gelap */
+}
+
+.dark-mode .profile {
+  background: #1f1f1f; /* Warna latar belakang saat mode gelap */
+}
+
+.dark-mode .profile h2 {
+  color: #ffffff; /* Warna teks saat mode gelap */
+}
+
+.dark-mode .profile p {
+  color: #ffffff; /* Warna teks saat mode gelap */
+}
+
+.dark-mode .profile i {
+  color: #ffffff; /* Warna ikon saat mode gelap */
+  transition: color 0.4s ease;
+}
+
+.dark-mode .project {
+  background: #1f1f1f; /* Warna latar belakang saat mode gelap */
+}
+
+.dark-mode .timeline-info small {
+  color: #ffffff; /* Warna teks saat mode gelap */
+}
+
+.dark-mode .timeline-info p {
+  color: #ffffff; /* Warna teks saat mode gelap */
+}
+
+.dark-mode .tech-icons svg {
+  fill: #ffffff; /* Warna ikon saat mode gelap */
+  transition: fill 0.4s ease;
+}
+
+.dark-mode .footer p {
+  color: #ffffff; /* Warna teks saat mode gelap */
+}
+
+.contact {
+  background: #f7f7f7;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.dark-mode .contact {
+  background: #1f1f1f; /* Warna latar belakang saat mode gelap */
+}
+
+.dark-mode .svg1:hover {
+  fill: #ff7b00; /* Warna saat dihover untuk HTML5 */
+}
+
+.dark-mode .svg2:hover {
+  fill: #0077ff; /* Warna saat dihover untuk PHP */
+}
+
+.dark-mode .svg3:hover {
+  fill: #ff0000; /* Warna saat dihover untuk Laravel */
+}
+
+.dark-mode .svg4:hover {
+  fill: #f0ec0f; /* Warna saat dihover untuk JavaScript */
+}
+
+.dark-mode .svg5:hover {
+  fill: #EE4323; /* Warna saat dihover untuk CSS3 */
+}
+
+.dark-mode .svg6:hover {
+  fill: #563d7c; /* Warna saat dihover untuk Bootstrap */
+}
+
+.dark-mode .svg7:hover {
+  fill: #7a7a7a; /* Warna saat dihover untuk Github */
+}
+
+.dark-mode .svg8:hover {
+  fill: #0077ff; /* Warna saat dihover untuk MySQL */
+}
+
+.timeline-wrapper {
+  position: relative;
+  padding: 22px 0;
+}
+.timeline-wrapper:last-child:before {
+  height: 0;
+}
+.timeline-wrapper:before {
+  content: "";
+  background: #474559;
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  left: 38px;
+}
+
+.timeline-yr {
+  background: #474559;
+  border-radius: 100%;
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  text-align: center;
+}
+.timeline-yr span {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: bold;
+  display: block;
+  line-height: 75px;
+}
+
+.timeline-info {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 432px;
+  margin-left: 6em;
+}
+.timeline-info small {
+  color: #474559;
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
+.owl-carousel .owl-nav span {
+  display: none;
+}
+.owl-carousel .owl-nav .owl-prev:before,
+.owl-carousel .owl-nav .owl-next:before {
+  background: none;
+  padding: 0;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-family: 'unicons';
+  font-size: 100px;
+  line-height: normal;
+}
+.owl-carousel .owl-nav .owl-prev:before {
+  content: '\e833';
+  left: -45px;
+}
+.owl-carousel .owl-nav .owl-next:before {
+  content: '\e836';
+  right: -45px;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+  background: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+}
+.owl-theme .owl-nav [class*=owl-]:hover {
+  color: #ffc200;
+}
+.owl-theme .owl-dots .owl-dot {
+  outline: none;
+}
+.owl-theme .owl-dots .owl-dot span {
+  width: 8px;
+  height: 8px;
+}
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+  background: #5b5b5b;
+}
+
+.google-map iframe {
+  width: 100%;
+}
+
+.contact-form {
+  position: relative;
+}
+.contact-form .form-control {
+  background: transparent;
+  border-radius: 2px;
+  outline: none;
+  box-shadow: none;
+  font-weight: bold;
+  margin: 16px 0;
+}
+.contact-form .form-control:not(textarea) {
+  height: 48px;
+}
+.contact-form .form-control:hover, .contact-form .form-control:focus {
+  border-color: #ffc200;
+}
+.contact-form .submit-btn {
+  background: #ffc200;
+  border-radius: 50px;
+  color: #ffffff;
+  font-weight: bold;
+  border: 0;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.contact-form .submit-btn:hover {
+  background: #474559;
+}
+
+.contact-info {
+  background: #474559;
+  border-radius: 0 0 3px 3px;
+  position: relative;
+  bottom: 8px;
+}
+.contact-info p, .contact-info a {
+  color: #f7f3f3;
+}
+
+.social-links .uil {
+  color: #f7f3f3;
+  font-size: 20px;
+  display: block;
+  margin: 5px 0;
+}
+
+.social-links svg:hover {
+  fill: #ffc200;
+  transition: fill 0.4s ease;
+}
+
+.social-links .uil:hover {
+  color: #ffc200;
+}
+
+/* PROFILE */
+.profile {
+  background: #f7f7f7;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.profile h2 {
+  margin-bottom: 4rem;
+  font-size: 2.4em;
+  color: #212121;
+}
+
+/* Tambahkan gaya tambahan sesuai kebutuhan untuk konten profil Anda */
+
+
+/* TECH STACK */
+.tech-stack {
+  background: #ffffff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.tech-stack h2 {
+  font-size: 2.4em;
+  color: #212121;
+}
+
+.tech-icons {
+  font-size: 40px;
+  margin-top: 30px;
+}
+
+.tech-icons i {
+  color: #5b5b5b;
+  margin: 0 20px;
+  transition: color 0.4s ease;
+}
+
+.tech-icons i:hover {
+  color: #ffc200;
+}
+
+.tech-icons svg {
+  margin: 0 20px;
+  transition: fill 0.4s ease; /* Efek hover pada border */
+}
+
+.svg1:hover {
+  fill: #ff7b00; /* Warna saat dihover untuk HTML5 */
+}
+
+.svg2:hover {
+  fill: #0077ff; /* Warna saat dihover untuk PHP */
+}
+
+.svg3:hover {
+  fill: #ff0000; /* Warna saat dihover untuk Laravel */
+}
+
+.svg4:hover {
+ fill: #f0ec0f; /* Warna saat dihover untuk JavaScript */
+}
+
+.svg5:hover {
+  fill: #EE4323; /* Warna saat dihover untuk Codeigniter */
+}
+
+.svg6:hover {
+  fill: #563d7c; /* Warna saat dihover untuk Bootstrap */
+}
+
+.svg7:hover {
+  fill: #212121; /* Warna saat dihover untuk Github */
+}
+
+.svg8:hover {
+  fill: #0077ff; /* Warna saat dihover untuk MySQL */
+}
+
+/* PROJECT */
+.project {
+  background: #f0f0f0;
+  padding: 60px 0;
+  text-align: center;
+}
+
+@media (min-width: 1270px) {
+  .owl-theme .owl-dots {
+    position: relative;
+    bottom: 50px;
+  }
+}
+@media (max-width: 991px) {
+  .full-screen {
+    padding-bottom: 4rem;
+  }
+
+  .color-mode {
+    display: inline;
+  }
+
+  .about-image {
+    margin-top: 4em;
+    display: none;
+  }
+
+  .mobile-mt-2,
+  .contact-form {
+    margin-top: 2em;
+  }
+
+  .contact-info {
+    padding: 0 2rem;
+  }
+
+  .dark-mode .navbar-light .navbar-nav .nav-link {
+    color: rgba(0, 0, 0, 0.8) !important;
+  }
+}
+@media (max-width: 767px) {
+  h1 {
+    font-size: 2.4em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  .animated-item {
+    font-size: 28px;
+  }
+
+  .navbar-collapse {
+    background: #ffffff;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+
+  .navbar-expand-sm .navbar-nav .nav-link {
+    padding: 5px 20px;
+  }
+}
+@media (max-width: 580px) {
+
+  .animated-item {
+    font-size: 30px;
+  }
+
+  .custom-btn-group {
+    text-align: center;
+  }
+
+  .custom-btn {
+    display: block;
+    margin: 10px 0;
+    /* width: 200px; */
+  }
+
+  .owl-theme .owl-nav {
+    display: none;
+  }
+
+  .timeline-info small {
+    display: block;
+    margin: 10px 0 0 0;
+  }
+}
+@media (max-width: 320px) {
+  .animated-text {
+    margin-top: 0;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .full-screen {
+    padding: 4rem 0;
+  }
+
+  .mobile-block {
+    display: block;
+  }
+
+  .contact-info {
+    flex-direction: column;
+  }
+
+  .social-links li {
+    display: inline-block;
+    vertical-align: top;
+  }
+}
